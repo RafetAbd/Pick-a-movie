@@ -2,13 +2,44 @@
 
 const db = require('./db')
 
-const User = require('./models/User')
+const User = require('./models/User');
+
+const List = require('./models/List')
+const Room = require('./models/Room')
+const MatchingMovie = require('./models/MatchingMovie')
+const Movie = require('./models/Movies');
 
 //associations could go here!
+User.hasMany(List);
+List.belongsTo(User);
+
+User.hasMany(Room);
+Room.belongsTo(User);
+
+Room.hasMany(List);
+List.belongsTo(Room);
+
+// User.hasMany(Room);
+// Room.belongsToMany(User, {
+//   through: List,
+//   foreignKey: "userId",
+// });
+
+List.hasMany(Movie);
+// SelectedMovie.belongsTo(List);
+
+MatchingMovie.hasMany(Movie)
+
+
+
 
 module.exports = {
   db,
   models: {
     User,
+    List,
+    Movie,
+    MatchingMovie,
+    Room
   },
 }

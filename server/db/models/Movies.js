@@ -8,3 +8,5 @@ const Movie = db.define('movie', {
 })
 
 
+module.exports = Movie
+

@@ -5,9 +5,7 @@ const Room = db.define('room', {
     status: {
         type: Sequelize.ENUM('open', 'closed')
     },
-    key: {
-        type: Sequelize.STRING,
-    }
+    key: Sequelize.STRING,
 })
 
 module.exports = Room;

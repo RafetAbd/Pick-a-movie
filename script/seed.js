@@ -33,9 +33,9 @@ async function seed() {
 
   const rooms = await Promise.all([
     Room.create({ status: "open", key: "1234567" }),
-    Room.create({ status: "open", key: "3476125", }),
-    Room.create({ status: "closed", key: "789", }),
-    Room.create({ status: "closed", key: "123", }),
+    Room.create({ status: "open", key: "3476125" }),
+    Room.create({ status: "closed", key: "789" }),
+    Room.create({ status: "closed", key: "123" }),
   ])
 
   const lists = await Promise.all([

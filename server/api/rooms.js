@@ -43,7 +43,7 @@ router.delete('/:roomId', async (req, res, next) => {
     const { roomId } = req.params
     const deletedroom = await Room.findByPk(roomId)
     await deletedroom.destroy();
-    res.send(deletedroom)
+    res.sendStatus(204);
   } catch (err) {
     next(err)
   }

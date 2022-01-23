@@ -38,24 +38,14 @@ async function seed() {
     Room.create({ status: "closed", key: "123" }),
   ])
 
-  const lists = await Promise.all([
-    List.create({ status: "active", roomId: 1 }),
-    List.create({ status: "active",  roomId: 1 }),
-    List.create({ status: "active", roomId: 1 }),
-    List.create({ status: "active", roomId: 2 }),
-    List.create({ status: "active", roomId: 2 }),
-    List.create({ status: "completed",  roomId: 4 }),
-    List.create({ status: "completed",  roomId: 4 }),
-  ])
+  // const lists = await Promise.all([
+  //   List.create({ status: "active", roomId: 1 }),
+  //   List.create({ status: "active", roomId: 2 }),
+  //   List.create({ status: "completed",  roomId: 3 }),
+  //   List.create({ status: "completed",  roomId: 4 }),
+  // ])
 
   const movies = await Promise.all([
-    Movie.create({ name: "abc", listId: 1 }),
-    Movie.create({ name: "123", listId: 1}),
-    Movie.create({ name: "ghi", listId: 1 }),
-    Movie.create({ name: "jkl", listId: 1 }),
-    Movie.create({ name: "sdfsd", listId: 2 }),
-    Movie.create({ name: "def", listId: 2}),
-    Movie.create({ name: "ghi", listId: 2 }),
     Movie.create({ name: "jkl", listId: 3 }),
     Movie.create({ name: "sdfsdf", listId: 3 }),
     Movie.create({ name: "def", listId: 3 }),
@@ -67,17 +57,11 @@ async function seed() {
     Movie.create({ name: "jkl", listId: 4 }),
     Movie.create({ name: "sdfdf", listId: 4 }),
     Movie.create({ name: "def", listId: 4 }),
-    Movie.create({ name: "ghi", listId: 5 }),
-    Movie.create({ name: "jkl", listId: 5 }),
-    Movie.create({ name: "sdfsd", listId: 5 }),
-    Movie.create({ name: "def", listId: 6 }),
-    Movie.create({ name: "ghi", listId: 6 }),
-    Movie.create({ name: "jkl", listId: 7 }),
   ])
 
   console.log(`seeded ${users.length} users`.green)
   console.log(`seeded ${rooms.length} rooms`.green)
-  console.log(`seeded ${lists.length} lists`.green)
+  // console.log(`seeded ${lists.length} lists`.green)
   console.log(`seeded ${movies.length} selectedMovies`.green)
   console.log(`seeded successfully`.cyan)
   return {

@@ -13,7 +13,7 @@ const Movie = require('./models/Movies');
 User.hasMany(Room);
 Room.belongsTo(User);
 
-Room.hasMany(List);
+// Room.HasOne(List);
 List.belongsTo(Room);
 
 // User.hasMany(Room);
@@ -23,7 +23,7 @@ List.belongsTo(Room);
 // });
 
 List.hasMany(Movie);
-// SelectedMovie.belongsTo(List);
+Movie.belongsTo(List)
 
 module.exports = {
   db,

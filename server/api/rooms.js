@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { models: { Room } } = require('../db')
+const { models: { Room, List, Movie } } = require('../db')
 
 
 router.get('/:key', async (req, res, next) => {
@@ -44,6 +44,47 @@ router.delete('/:roomId', async (req, res, next) => {
     const deletedroom = await Room.findByPk(roomId)
     await deletedroom.destroy();
     res.sendStatus(204);
+  } catch (err) {
+    next(err)
+  }
+})
+
+// adding movie to rightSwiped array.
+router.put('/addMovie/:roomId', async (req, res, next) => {
+  try {
+    const movieUniqueId = req.body.movieUniqueId
+    let room = await Room.findByPk(req.params.roomId);
+    let list = await List.findOne(
+      {
+        where: {
+          roomId: room.id
+        }
+      })
+
+    // check if the movie is in the array.
+    let movieInrightSwiped = room.rightSwiped.filter((item) => item === movieUniqueId);
+    if (movieInrightSwiped) {
+      // if movie in the array, find or add it to the movie table
+      let [matchedMovie] = await Movie.findOrCreate({
+        where: {
+          title: req.body.title,
+          movieId: movieUniqueId,
+          crew: req.body.crew,
+          imageUrl: req.body.imageUrl,
+          movieRank: req.body.movieRank,
+          listId: list.id
+        }
+      })
+      res.status(200).send(matchedMovie)
+    } else {
+      // if the movie is not in the array - add it
+      await room.update({
+        rightSwiped: [...room.rightSwiped, movieUniqueId]
+      })
+      room = await Room.findByPk(req.params.roomId);
+      // res.status(200).send(room)
+      res.status(200)
+    }
   } catch (err) {
     next(err)
   }

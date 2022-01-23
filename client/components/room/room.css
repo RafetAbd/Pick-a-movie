@@ -1,0 +1,22 @@
+
+.movie-pic {
+    height:50%;
+    width: 80%;
+}
+
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2%;
+    border: solid white 2px;
+    border-radius: 10px;
+    align-items: center;
+    width: 20%;
+}
+
+.all-movies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

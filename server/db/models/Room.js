@@ -8,7 +8,8 @@ const Room = db.define('room', {
     },
     key: Sequelize.STRING,
     rightSwiped: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER)
+        type: Sequelize.ARRAY(Sequelize.STRING),
+        defaultValue: []
     },
 })
 

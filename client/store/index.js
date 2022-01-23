@@ -5,11 +5,13 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import auth from './auth'
 import room from './room'
 import modal from './modal'
+import imdb from './imdb'
 
 const reducer = combineReducers({ 
   auth,
   room,
-  modal
+  modal,
+  imdb
  })
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))

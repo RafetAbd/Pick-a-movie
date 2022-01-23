@@ -14,7 +14,7 @@ User.hasMany(Room);
 Room.belongsTo(User);
 
 // Room.HasOne(List);
-List.belongsTo(Room);
+// List.belongsTo(Room);
 
 // User.hasMany(Room);
 // Room.belongsToMany(User, {
@@ -22,8 +22,8 @@ List.belongsTo(Room);
 //   foreignKey: "userId",
 // });
 
-List.hasMany(Movie);
-Movie.belongsTo(List)
+Room.hasMany(Movie);
+Movie.belongsTo(Room)
 
 module.exports = {
   db,

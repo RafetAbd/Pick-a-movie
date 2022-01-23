@@ -52,27 +52,30 @@ router.delete('/:roomId', async (req, res, next) => {
 // adding movie to rightSwiped array.
 router.put('/addMovie/:roomId', async (req, res, next) => {
   try {
-    const movieUniqueId = req.body.movieUniqueId
+    
+    const movieUniqueId = req.body.id
+    // console.log(req.body)
     let room = await Room.findByPk(req.params.roomId);
-    let list = await List.findOne(
-      {
-        where: {
-          roomId: room.id
-        }
-      })
+    // let list = await List.findOne(
+    //   {
+    //     where: {
+    //       roomId: room.id
+    //     }
+    //   })
 
     // check if the movie is in the array.
     let movieInrightSwiped = room.rightSwiped.filter((item) => item === movieUniqueId);
-    if (movieInrightSwiped) {
+    if (movieInrightSwiped.length > 0 ) {
       // if movie in the array, find or add it to the movie table
       let [matchedMovie] = await Movie.findOrCreate({
         where: {
-          title: req.body.title,
+          title: req.body.fullTitle,
           movieId: movieUniqueId,
           crew: req.body.crew,
-          imageUrl: req.body.imageUrl,
-          movieRank: req.body.movieRank,
-          listId: list.id
+          imageUrl: req.body.image,
+          movieRank: req.body.rank,
+          // listId: list.id
+          roomId: room.id
         }
       })
       res.status(200).send(matchedMovie)
@@ -83,7 +86,7 @@ router.put('/addMovie/:roomId', async (req, res, next) => {
       })
       room = await Room.findByPk(req.params.roomId);
       // res.status(200).send(room)
-      res.status(200)
+      res.status(200).send(movieUniqueId)
     }
   } catch (err) {
     next(err)

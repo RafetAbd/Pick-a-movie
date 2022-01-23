@@ -6,12 +6,14 @@ import auth from './auth'
 import room from './room'
 import modal from './modal'
 import imdb from './imdb'
+import matchedMovies from './matchedMovie'
 
 const reducer = combineReducers({ 
   auth,
   room,
   modal,
-  imdb
+  imdb,
+  matchedMovies
  })
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))

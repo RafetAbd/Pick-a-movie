@@ -1,6 +1,8 @@
 import axios from 'axios'
+import { addMatchedMovie } from './matchedMovie'
 const TOKEN = 'token'
 import history from "../history";
+import socket from "../index"
 
 const CREATE_ROOM = 'CREATE_ROOM';
 const GOT_ROOM = 'GOT_ROOM';
@@ -43,7 +45,7 @@ export const fetchRoom = (key) => {
         try {
             const { data: response } = await axios.get(`/api/rooms/${key}`);
             dispatch(gotRoomFromServer(response))
-            console.log(response.key)
+            // console.log(response.key)
             history.push(`/rooms/${response.key}`)
         } catch(err) {
             console.log(err)
@@ -53,13 +55,19 @@ export const fetchRoom = (key) => {
 
 
 
-export const updateRoom = (roomId, movieId) => {
+export const updateRoom = (roomId, movie) => {
+    // console.log('roomId', roomId);
+    // console.log('movie', movie)
     return async(dispatch) => {
         try {
-            const { data: response } = await axios.put(`./api/rooms/addmovie/${roomId}`, movieId);
-            // dispatch(addMovieToRoom());
-            // ^^^^^^^ need to  pass something to the funnction
-            // the response has to be the movie id !!!!
+            const { data: response } = await axios.put(`/api/rooms/addMovie/${roomId}`, movie);
+            console.log('response = ',response)
+            if ( typeof (response ) === 'object' ) {
+                dispatch(addMatchedMovie(response));
+                socket.emit('new-matched-movie', response);
+            } else {
+                dispatch(addMovieToRoom(response))
+            }
         } catch (err) {
             console.log(err)
         }

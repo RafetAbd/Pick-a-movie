@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt');
 const axios = require('axios');
 
+
 // const privateKey = '12345';
 
 const SALT_ROUNDS = 5;
@@ -30,6 +31,7 @@ User.prototype.correctPassword = function(candidatePwd) {
 }
 
 User.prototype.generateToken = function() {
+  console.log(process.env.JWT)
   return jwt.sign({id: this.id}, process.env.JWT)
 }
 

@@ -39,13 +39,13 @@ async function seed() {
   ])
 
   const lists = await Promise.all([
-    List.create({ status: "active", userId: 1, roomId: 1 }),
-    List.create({ status: "active", userId: 1, roomId: 1 }),
-    List.create({ status: "active", userId: 3, roomId: 1 }),
-    List.create({ status: "active", userId: 4, roomId: 2 }),
-    List.create({ status: "active", userId: 5, roomId: 2 }),
-    List.create({ status: "completed", userId: 2, roomId: 4 }),
-    List.create({ status: "completed", userId: 6, roomId: 4 }),
+    List.create({ status: "active", roomId: 1 }),
+    List.create({ status: "active",  roomId: 1 }),
+    List.create({ status: "active", roomId: 1 }),
+    List.create({ status: "active", roomId: 2 }),
+    List.create({ status: "active", roomId: 2 }),
+    List.create({ status: "completed",  roomId: 4 }),
+    List.create({ status: "completed",  roomId: 4 }),
   ])
 
   const movies = await Promise.all([
@@ -74,9 +74,6 @@ async function seed() {
     Movie.create({ name: "ghi", listId: 6 }),
     Movie.create({ name: "jkl", listId: 7 }),
   ])
-
-  "id","name","createdAt","updatedAt","listId"
-  "id","name","createdAt","updatedAt","listId"
 
   console.log(`seeded ${users.length} users`.green)
   console.log(`seeded ${rooms.length} rooms`.green)

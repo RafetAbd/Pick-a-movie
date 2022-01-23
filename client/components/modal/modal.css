@@ -1,0 +1,71 @@
+
+.screen{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000ad;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    /* bottom: 0;
+    right: 0; */
+  }
+
+  .child {
+    height: 40%;
+    width: 30%;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.776);
+  }
+/* 
+  .checkout-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal-link {
+    background-color: rgb(40, 156, 191);
+    font-size: 18px;
+    color: white;
+    padding:4%;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #ababab;
+  }
+
+  .modal-link:hover{
+    opacity: 0.8;
+  }
+
+  .cancel-modal-button {
+    background-color: #f56a1f;
+    color: white;
+    font-size: 18px;
+    padding:4%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ababab;
+    width: 100%;
+  }
+
+  .cancel-modal-button:hover {
+    background-color: #f56a1f;
+    opacity: 0.8
+  } */

@@ -1,14 +1,14 @@
 const router = require('express').Router()
 const { models: { Room } } = require('../db')
-module.exports = router
 
-router.get('/', async (req, res, next) => {
+
+router.get('/:key', async (req, res, next) => {
   try {
     let room = await Room.findOne(
       {
         where: {
           status: 'open',
-          key: req.body.key
+          key: req.params.key
         }
       }
     );
@@ -60,3 +60,5 @@ router.put('/:roomId', async (req, res, next) => {
     next(error)
   }
 })
+
+module.exports = router

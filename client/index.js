@@ -5,6 +5,21 @@ import {Router} from 'react-router-dom'
 import history from './history'
 import store from './store'
 import App from './App'
+import io from 'socket.io-client';
+
+const socket = io('http://localhost:1337');
+
+socket.on('connect', () => {
+    console.log('I am now connected to the server!');
+    socket.on('other-new-message', (message) => {
+        // store.dispatch(gotNewMessageFromServer(message));
+    });
+    socket.on('other-new-channel', (channel) => {
+        // store.dispatch(gotNewChannelFromServer(channel));
+    }) 
+});
+
+export default socket;
 
 ReactDOM.render(
   <Provider store={store}>

@@ -8,7 +8,6 @@ router.get('/', async (req, res, next) => {
         let list = await List.findOne(
             {
                 where: {
-                    userId: req.body.userId,
                     roomId: req.body.roomId,
                     status: 'active'
                 },
@@ -22,18 +21,18 @@ router.get('/', async (req, res, next) => {
     }
 })
 
-router.post('/', async (req, res, next) => {
-    try {
-        const newList = await List.create({
-            userId: req.body.userId,
-            roomId: req.body.roomId,
-            status: 'active'
-        })
-        res.json(newList)
-    } catch (err) {
-        next(err)
-    }
-})
+// router.post('/', async (req, res, next) => {
+//     try {
+//         const newList = await List.create({
+//             userId: req.body.userId,
+//             roomId: req.body.roomId,
+//             status: 'active'
+//         })
+//         res.json(newList)
+//     } catch (err) {
+//         next(err)
+//     }
+// })
 
 router.put('/remove-movie/:movieId', async (req, res, next) => {
     try {

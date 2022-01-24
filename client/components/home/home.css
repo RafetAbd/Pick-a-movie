@@ -10,9 +10,10 @@
 }
 
 .landing-page-text {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
     width: 40%;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .landing-page-after-login {

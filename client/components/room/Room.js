@@ -5,7 +5,9 @@ import { fetchAllMoviesFromIMDb } from '../../store/imdb'
 import { motion, useMotionValue, useTransform } from "framer-motion"
 import { removeMovie } from '../../store/imdb'
 import { updateRoom } from '../../store/room'
-const ROOM = 'room'
+import { fetchMatchedMovies } from '../../store/matchedMovie'
+const ROOM = 'room';
+const MATCHED = 'MATCHED';
 import './room.css'
 
 const Room = () => {
@@ -28,22 +30,30 @@ const Room = () => {
         return state.imdb
     })
 
-    const checkPosition = (xPosition, movie) => {
+    const checkPosition = async (xPosition, movie) => {
         if (xPosition < 100) {
             console.log('remove from the list')
-            dispatch(removeMovie(movie))
+            await dispatch(removeMovie(movie))
         } else if (xPosition > 900) {
             console.log('add to the backend')
-            dispatch(updateRoom(recentRoom.id, movie));
+            await dispatch(updateRoom(recentRoom.id, movie));
             dispatch(removeMovie(movie))
         } else {
             return
         }
     }
 
+    useEffect(() => {
+        dispatch(fetchMatchedMovies(recentRoom.id));
+    }, [])
+
     const matchedMovies = useSelector((state) => {
         return state.matchedMovies
     })
+
+    // useEffect(() => {
+    //     window.localStorage.setItem(MATCHED, JSON.stringify(matchedMovies));
+    // }, [matchedMovies]);
 
     return (
         <motion.div>

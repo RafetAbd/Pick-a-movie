@@ -19,6 +19,20 @@ router.get('/:key', async (req, res, next) => {
   }
 })
 
+// get all matched movies that has the same room id
+router.get('/matchedmovies/:roomId', async(req,res,next) => {
+  try {
+    let matchedMovies = await Movie.findAll({
+      where: {
+        roomId: req.params.roomId
+      }
+    })
+    res.json(matchedMovies)
+  } catch(err) {
+    next(err)
+  }
+})
+
 router.post('/', async (req, res, next) => {
   try {
     let newKey = () => {

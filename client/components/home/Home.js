@@ -38,7 +38,7 @@ const Home = () => {
           className='landing-page-after-login'>
 
           {/* The home page will show these links after you log in */}
-        
+
           <Link to="/newroom" onClick={() => createRoom()} className='create-room-link'>Create a new room</Link>
           <button onClick={() => open()} className='join-room-btn'>Join Room</button>
 

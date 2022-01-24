@@ -1,8 +1,10 @@
 import axios from 'axios'
 import history from '../history'
+import { removeMatchedMovies } from './matchedMovie'
 
 const ROOM = 'room'
 const TOKEN = 'token'
+const MATCHED = 'MATCHED';
 
 /**
  * ACTION TYPES
@@ -42,11 +44,16 @@ export const authenticate = (username, password, method) => async dispatch => {
 export const logout = () => {
   window.localStorage.removeItem(TOKEN)
   window.localStorage.removeItem(ROOM)
+  // window.localStorage.removeItem(MATCHED)
   history.push('/login')
-  return {
-    type: SET_AUTH,
-    auth: {}
-  }
+  return (dispatch) => {
+    // dispatch(removeMatchedMovies());
+    dispatch(setAuth({}));
+  };
+  // return {
+  //   type: SET_AUTH,
+  //   auth: {}
+  // }
 }
 
 /**

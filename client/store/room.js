@@ -46,7 +46,6 @@ export const fetchRoom = (key) => {
         try {
             const { data: response } = await axios.get(`/api/rooms/${key}`);
             dispatch(gotRoomFromServer(response))
-            // console.log(response.key)
             history.push(`/rooms/${response.key}`)
         } catch(err) {
             console.log(err)

@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
-const List = require('./List');
+
 
 const Room = db.define('room', {
     status: {
@@ -11,10 +11,6 @@ const Room = db.define('room', {
         type: Sequelize.ARRAY(Sequelize.STRING),
         defaultValue: []
     },
-})
-
-Room.afterCreate(async(room) => {
-    await List.create({roomId: room.id, status: 'active'})
 })
 
 module.exports = Room;

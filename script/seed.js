@@ -2,7 +2,6 @@
 const colors = require('colors');
 const { db, models: {
   User,
-  List,
   Movie,
   Room
 },
@@ -31,38 +30,9 @@ async function seed() {
     User.create({ username: "lisa@mail.com", password: "123", }),
   ])
 
-  const rooms = await Promise.all([
-    Room.create({ status: "open", key: "1234567" }),
-    Room.create({ status: "open", key: "3476125" }),
-    Room.create({ status: "closed", key: "789" }),
-    Room.create({ status: "closed", key: "123" }),
-  ])
-
-  // const lists = await Promise.all([
-  //   List.create({ status: "active", roomId: 1 }),
-  //   List.create({ status: "active", roomId: 2 }),
-  //   List.create({ status: "completed",  roomId: 3 }),
-  //   List.create({ status: "completed",  roomId: 4 }),
-  // ])
-
-  const movies = await Promise.all([
-    Movie.create({ name: "jkl", roomId: 3 }),
-    Movie.create({ name: "sdfsdf", roomId: 3 }),
-    Movie.create({ name: "def", roomId: 3 }),
-    Movie.create({ name: "ghi", roomId: 3 }),
-    Movie.create({ name: "jkl", roomId: 3 }),
-    Movie.create({ name: "sdfds", roomId: 4 }),
-    Movie.create({ name: "def", roomId: 4 }),
-    Movie.create({ name: "ghi", roomId: 4 }),
-    Movie.create({ name: "jkl", roomId: 4 }),
-    Movie.create({ name: "sdfdf", roomId: 4 }),
-    Movie.create({ name: "def", roomId: 4 }),
-  ])
-
   console.log(`seeded ${users.length} users`.green)
-  console.log(`seeded ${rooms.length} rooms`.green)
-  // console.log(`seeded ${lists.length} lists`.green)
-  console.log(`seeded ${movies.length} selectedMovies`.green)
+  // console.log(`seeded ${rooms.length} rooms`.green)
+  // console.log(`seeded ${movies.length} selectedMovies`.green)
   console.log(`seeded successfully`.cyan)
   return {
     users: {

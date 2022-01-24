@@ -27,12 +27,9 @@ const init = async () => {
         console.log(`USER (${socket.id}) disconnected`.brightRed);
       });
       socket.on('new-matched-movie', function (movie) {
-        // socket.broadcast.emit('other-new-message', message);
+        
         socket.broadcast.emit('other-new-matched-movie', movie); 
       });
-      // socket.on('new-channel', function(channel){
-      // socket.broadcast.emit('other-new-channel', channel); 
-      // });
     })
 
 

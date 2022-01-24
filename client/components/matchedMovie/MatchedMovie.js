@@ -33,9 +33,9 @@ const MatchedMovie = (props) => {
     return (
         <div className="single-movie-page">
             <div className="gobackbtn-trailor-div">
-                <motion.div 
-                whileHover={{ scale: 1.2 }}
-                className='goback-link-div'>
+                <motion.div
+                    whileHover={{ scale: 1.2 }}
+                    className='goback-link-div'>
                     <Link to="/room" onClick={handleClick} className='goback-link'>
                         BACH TO ROOM
                     </Link>

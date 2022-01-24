@@ -24,9 +24,9 @@ const Navbar = () => {
   return (
 
     <motion.nav
-    initial={{ y: -250}}
-    animate={{ y: 0}}
-    transition={{delay: 0.2, type: 'spring', stiffness: 60}}
+      initial={{ y: -250 }}
+      animate={{ y: 0 }}
+      transition={{ delay: 0.2, type: 'spring', stiffness: 60 }}
     >
       {isLoggedIn ? (
         <>
@@ -36,9 +36,9 @@ const Navbar = () => {
 
           {/* The navbar will show these links after you log in */}
           <p className="welcome-user">Welcome {userName}</p>
-          <motion.a 
-          whileHover={{ scale: 1.2 }}
-          href="#" onClick={handleClick} className='logout'>
+          <motion.a
+            whileHover={{ scale: 1.2 }}
+            href="#" onClick={handleClick} className='logout'>
             Logout
           </motion.a>
         </>

@@ -13,13 +13,9 @@ const socket = io('http://localhost:1337');
 socket.on('connect', () => {
   console.log('I am now connected to the server!');
   socket.on('other-new-matched-movie', (movie) => {
-    // store.dispatch(gotNewMessageFromServer(message));
-    store.dispatch(addMatchedMovie(movie));
 
+    store.dispatch(addMatchedMovie(movie));
   });
-  socket.on('other-new-channel', (channel) => {
-    // store.dispatch(gotNewChannelFromServer(channel));
-  })
 });
 
 export default socket;

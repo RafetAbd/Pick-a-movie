@@ -7,7 +7,6 @@ import { removeMovie } from '../../store/imdb'
 import { updateRoom } from '../../store/room'
 import { fetchMatchedMovies } from '../../store/matchedMovie'
 const ROOM = 'room';
-const MATCHED = 'MATCHED';
 import './room.css'
 
 const Room = () => {
@@ -51,28 +50,22 @@ const Room = () => {
         return state.matchedMovies
     })
 
-    // useEffect(() => {
-    //     window.localStorage.setItem(MATCHED, JSON.stringify(matchedMovies));
-    // }, [matchedMovies]);
-
     return (
         <motion.div>
             <p className='room-key-inside-room'>Room Key {recentRoom.key}</p>
             <div className='matched-movies-list-in-room'>
                 {matchedMovies.map((item) => {
                     return (
-                        <motion.div 
-                        whileHover={{ scale: 1.2 }}
-                        key={item.id} className='single-movie-div'>
-                            {/* {console.log(item)} */}
+                        <motion.div
+                            whileHover={{ scale: 1.2 }}
+                            key={item.id} className='single-movie-div'>
+
                             <Link to={`/matchedmovie/${item.movieId}`} className='single-movie-link'>
                                 <img src={item.imageUrl} />
                                 <p className='single-movie-link-title'>{item.title}</p>
-                                {/* <p>rating {item.imDbRating}</p>
-                                <p>crew {item.crew}</p> */}
                             </Link>
-                        </motion.div>
 
+                        </motion.div>
                     )
                 })}
             </div>
@@ -80,16 +73,13 @@ const Room = () => {
                 {allMovies.map((movie) => {
                     return (
                         <motion.div key={movie.id} className='movie-list'
-                        whileHover={{ scale: 1.2 }}
+                            whileHover={{ scale: 1.2 }}
                             drag="x"
                             dragConstraints={{ left: 0, right: 0 }}
-                            // style={{ x }}
                             dragElastic={1}
                             onDragEnd={
                                 (event, info) => checkPosition(info.point.x, movie)
-
                             }
-
                             style={{ position: 'absolute', zIndex: 200 - movie.id || 1 }}
                         >
                             <img src={movie.image} className='movie-pic' />

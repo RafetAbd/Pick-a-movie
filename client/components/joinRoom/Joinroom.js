@@ -39,6 +39,7 @@ const JoinRoom = () => {
                     onClick={() => close()} className="submit-cancel-joinroom-button" style={{ textDecoration: 'none' }}>
                     Cancel
                 </motion.button>
+
             </form>
         </>
     )

@@ -1,7 +1,7 @@
 const {
     models: { User },
 } = require("../db");
-// const { findByToken } = require('../db/models/User')
+
 
 const requireToken = async (req, res, next) => {
     try {

@@ -4,7 +4,6 @@ import { removeMatchedMovies } from './matchedMovie'
 
 const ROOM = 'room'
 const TOKEN = 'token'
-const MATCHED = 'MATCHED';
 
 /**
  * ACTION TYPES
@@ -14,7 +13,7 @@ const SET_AUTH = 'SET_AUTH'
 /**
  * ACTION CREATORS
  */
-const setAuth = auth => ({type: SET_AUTH, auth})
+const setAuth = auth => ({ type: SET_AUTH, auth })
 
 /**
  * THUNK CREATORS
@@ -33,33 +32,27 @@ export const me = () => async dispatch => {
 
 export const authenticate = (username, password, method) => async dispatch => {
   try {
-    const res = await axios.post(`/auth/${method}`, {username, password})
+    const res = await axios.post(`/auth/${method}`, { username, password })
     window.localStorage.setItem(TOKEN, res.data.token)
     dispatch(me())
   } catch (authError) {
-    return dispatch(setAuth({error: authError}))
+    return dispatch(setAuth({ error: authError }))
   }
 }
 
 export const logout = () => {
   window.localStorage.removeItem(TOKEN)
   window.localStorage.removeItem(ROOM)
-  // window.localStorage.removeItem(MATCHED)
   history.push('/login')
   return (dispatch) => {
-    // dispatch(removeMatchedMovies());
     dispatch(setAuth({}));
   };
-  // return {
-  //   type: SET_AUTH,
-  //   auth: {}
-  // }
 }
 
 /**
  * REDUCER
  */
-export default function(state = {}, action) {
+export default function (state = {}, action) {
   switch (action.type) {
     case SET_AUTH:
       return action.auth

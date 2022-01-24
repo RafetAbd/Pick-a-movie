@@ -1,8 +1,9 @@
 const router = require('express').Router()
-const { models: { Room, List, Movie } } = require('../db')
+const { models: { Room, Movie } } = require('../db')
+const { requireToken } = require('./gateKeepingMed')
 
-
-router.get('/:key', async (req, res, next) => {
+// route to send a specific room to the frontend.
+router.get('/:key', requireToken, async (req, res, next) => {
   try {
     let room = await Room.findOne(
       {
@@ -20,7 +21,7 @@ router.get('/:key', async (req, res, next) => {
 })
 
 // get all matched movies that has the same room id
-router.get('/matchedmovies/:roomId', async(req,res,next) => {
+router.get('/matchedmovies/:roomId', requireToken, async (req, res, next) => {
   try {
     let matchedMovies = await Movie.findAll({
       where: {
@@ -28,12 +29,12 @@ router.get('/matchedmovies/:roomId', async(req,res,next) => {
       }
     })
     res.json(matchedMovies)
-  } catch(err) {
+  } catch (err) {
     next(err)
   }
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/', requireToken, async (req, res, next) => {
   try {
     let newKey = () => {
       let result = '';
@@ -52,6 +53,7 @@ router.post('/', async (req, res, next) => {
   }
 })
 
+// this route is not functional yest, for future development.
 router.delete('/:roomId', async (req, res, next) => {
   try {
     const { roomId } = req.params
@@ -64,23 +66,16 @@ router.delete('/:roomId', async (req, res, next) => {
 })
 
 // adding movie to rightSwiped array.
-router.put('/addMovie/:roomId', async (req, res, next) => {
+router.put('/addMovie/:roomId', requireToken, async (req, res, next) => {
   try {
-    
     const movieUniqueId = req.body.id
-    // console.log(req.body)
     let room = await Room.findByPk(req.params.roomId);
-    // let list = await List.findOne(
-    //   {
-    //     where: {
-    //       roomId: room.id
-    //     }
-    //   })
 
     // check if the movie is in the array.
     let movieInrightSwiped = room.rightSwiped.filter((item) => item === movieUniqueId);
-    if (movieInrightSwiped.length > 0 ) {
-      // if movie in the array, find or add it to the movie table
+    if (movieInrightSwiped.length > 0) {
+
+      // if movie in the array, find or add it to the matching movie table
       let [matchedMovie] = await Movie.findOrCreate({
         where: {
           title: req.body.fullTitle,
@@ -88,18 +83,17 @@ router.put('/addMovie/:roomId', async (req, res, next) => {
           crew: req.body.crew,
           imageUrl: req.body.image,
           movieRank: req.body.rank,
-          // listId: list.id
           roomId: room.id
         }
       })
       res.status(200).send(matchedMovie)
     } else {
+
       // if the movie is not in the array - add it
       await room.update({
         rightSwiped: [...room.rightSwiped, movieUniqueId]
       })
       room = await Room.findByPk(req.params.roomId);
-      // res.status(200).send(room)
       res.status(200).send(movieUniqueId)
     }
   } catch (err) {
@@ -107,6 +101,7 @@ router.put('/addMovie/:roomId', async (req, res, next) => {
   }
 })
 
+// this route is not functional yet, for future development.
 router.put('/:roomId', async (req, res, next) => {
   try {
     const { roomId } = req.params

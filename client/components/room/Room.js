@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchAllMoviesFromIMDb } from '../../store/imdb'
-import { motion, useMotionValue, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { removeMovie } from '../../store/imdb'
 import { updateRoom } from '../../store/room'
 import { fetchMatchedMovies } from '../../store/matchedMovie'

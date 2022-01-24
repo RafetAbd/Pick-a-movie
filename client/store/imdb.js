@@ -21,7 +21,7 @@ export const fetchAllMoviesFromIMDb = () => {
     return async (dispatch) => {
         try {
             const { data: response } = await axios('https://imdb-api.com/en/API/MostPopularMovies/k_ww4cypd0');
-            console.log(response.items)
+            // console.log(response.items)
             dispatch(gotMovies(response.items))
         } catch (err) {
             console.log(err)

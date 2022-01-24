@@ -5,6 +5,7 @@ import { Login, Signup } from './components/authForm/AuthForm';
 import Home from './components/home/Home';
 import NewRoom from './components/newRoom/Newroom';
 import Room from './components/room/Room';
+import MatchedMovie from './components/matchedMovie/MatchedMovie';
 import { me } from './store'
 
 /**
@@ -25,11 +26,13 @@ class Routes extends Component {
             <Route path="/newroom" component={NewRoom} />
             <Route path="/rooms" component={Room} />
             <Route path="/home" component={Home} />
+            <Route path="/matchedmovie/:movieId" component={MatchedMovie} />
             <Redirect to="/home" />
           </Switch>
         ) : (
           <Switch>
-            <Route path='/' exact component={Login} />
+            <Route path='/' exact component={Home} />
+            <Route path='/home' exact component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
           </Switch>

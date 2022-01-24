@@ -2,6 +2,7 @@ import axios from 'axios'
 import { addMatchedMovie } from './matchedMovie'
 const TOKEN = 'token'
 import history from "../history";
+const ROOM = 'room'
 import socket from "../index"
 
 const CREATE_ROOM = 'CREATE_ROOM';
@@ -61,7 +62,6 @@ export const updateRoom = (roomId, movie) => {
     return async(dispatch) => {
         try {
             const { data: response } = await axios.put(`/api/rooms/addMovie/${roomId}`, movie);
-            console.log('response = ',response)
             if ( typeof (response ) === 'object' ) {
                 dispatch(addMatchedMovie(response));
                 socket.emit('new-matched-movie', response);
@@ -85,7 +85,7 @@ export const closeRoom = (roomId) => {
     }
 }
 
-const initialState = {}
+const initialState = JSON.parse(window.localStorage.getItem(ROOM)) || {}
 
 export default (state = initialState, action ) => {
     switch(action.type) {

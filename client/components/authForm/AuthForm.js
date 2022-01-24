@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {authenticate} from '../../store'
+import { motion } from 'framer-motion'
+import './authForm.css'
 
 /**
  * COMPONENT
@@ -9,26 +11,32 @@ const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} name={name}>
+    <motion.div 
+    initial={{ opacity: 0}}
+    animate={{ opacity: 1}}
+    transition={{delay: 0.1, duration:0.8}}
+    >
+      <form onSubmit={handleSubmit} name={name} className='auth-form'>
         <div>
-          <label htmlFor="username">
-            <small>Username</small>
+          <label htmlFor="username" className='username-password-label'>
+            <p>USERNAME</p>
           </label>
-          <input name="username" type="text" />
+          <input name="username" type="text" className='username-password-input'/>
         </div>
         <div>
-          <label htmlFor="password">
-            <small>Password</small>
+          <label htmlFor="password" className='username-password-label'>
+            <p>PASSWORD</p>
           </label>
-          <input name="password" type="password" />
+          <input name="password" type="password" className='username-password-input'/>
         </div>
         <div>
-          <button type="submit">{displayName}</button>
+          <motion.button 
+          whileHover={{ scale: 1.2 }}
+          type="submit" className='submit-button'>{displayName}</motion.button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
-    </div>
+    </motion.div>
   )
 }
 

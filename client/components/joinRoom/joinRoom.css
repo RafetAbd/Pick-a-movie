@@ -1,5 +1,41 @@
 
 
-.join-room {
-    
+.join-a-room-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
 }
+
+.room-key {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+}
+
+#roomkey-input {
+    font-size: 20px;
+    color: #333;
+    width: 30%;
+    border: solid #cdc6c6 2px;
+    box-shadow: 0 0 15px 10px rgba(0,0,0,0.06);
+}
+
+.submit-cancel-joinroom-button {
+    background: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    padding: 15px 0;
+    border: none;
+    cursor: pointer;
+    margin-top:3%;
+    width: 20%;
+    border-radius: 10px;
+    border: 1px solid #ababab;
+    box-shadow: 0 0 15px 10px rgba(0,0,0,0.06);
+}
+
+
+

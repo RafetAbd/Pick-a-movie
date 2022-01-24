@@ -1,0 +1,63 @@
+
+.landing-page-before-login {
+    margin-top: 5%;
+}
+
+.next-movie {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 90px;
+    margin-bottom: 0;
+}
+
+.landing-page-text {
+    font-size: 20px;
+    width: 40%;
+    font-weight: bold;
+}
+
+.landing-page-after-login {
+    display: flex;
+    margin: 10%;
+    width: 80%;
+    
+}
+
+.create-room-link  {
+    background: none;
+    font-size: 18px;
+    color: white;
+    padding: 35px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top:3%;
+    width: 15%;
+    border-radius: 10px;
+    border: 1px solid #ababab;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 0px 8px rgb(255,255,255);
+}
+
+.create-room-link:hover {
+    transform: scale(1.2)
+}
+
+.join-room-btn {
+    background: none;
+    font-size: 18px;
+    color: white;
+    padding: 35px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top:3%;
+    width: 15%;
+    border-radius: 10px;
+    border: 1px solid #ababab;
+    margin-left: 5%;
+    font-weight: bold;
+    box-shadow: 0px 0px 8px rgb(255,255,255);
+}
+.join-room-btn:hover {
+    transform: scale(1.2);
+}
+

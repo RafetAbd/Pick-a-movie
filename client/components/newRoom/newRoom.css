@@ -1,0 +1,49 @@
+
+
+.newroom-page {
+    margin:10%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.newroom-label-key-div {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    border-radius: 10px;
+    border: 1px solid #ababab;
+    width: 40%;
+    justify-content: space-around;
+    box-shadow: 0px 0px 8px rgb(255,255,255);
+}
+
+.newroom-lable {
+    
+}
+
+.newroom-key {
+   font-weight: bold;
+}
+
+.newroom-link-div {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    border-radius: 10px;
+    border: 1px solid #ababab;
+    width: 40%;
+    justify-content: center;
+    margin-top: 3%;
+    padding: 2%;
+    box-shadow: 0px 0px 8px rgb(255,255,255);}
+
+.newroom-link {
+    font-size: 20px;
+    color: white;
+    /* height: 100%; */
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    
+}

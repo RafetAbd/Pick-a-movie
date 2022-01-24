@@ -10,25 +10,13 @@
 body {
  margin: 0;
  padding: 0;
-  color: white;
-  background-color: #236B8E;
-  /* background-image: url('/background-1.jpeg'); */
+ padding:0 2%;
+ color: white;
+ background-image: url('/background-1.jpeg');
+ background-repeat: no-repeat;
+ background-size: cover;
 }
 
 a {
   text-decoration: none;
-}
-
-label {
-  display: block;
-}
-
-nav a {
-  display: inline-block;
-  margin: 1em;
-}
-
-form div {
-  margin: 1em;
-  display: inline-block;
 }

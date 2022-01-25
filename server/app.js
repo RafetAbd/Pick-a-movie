@@ -3,7 +3,7 @@ const express = require('express')
 const morgan = require('morgan')
 const app = express()
 module.exports = app
-require('dotenv').config()
+// require('dotenv').config()
 
 // logging middleware
 app.use(morgan('dev'))

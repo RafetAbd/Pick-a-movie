@@ -24,8 +24,8 @@ export const removeMovie = (movie) => {
 export const fetchAllMoviesFromIMDb = () => {
     return async (dispatch) => {
         try {
-            // const { data: response } = await axios('https://imdb-api.com/en/API/MostPopularMovies/k_ww4cypd0');
-            const { data: response } = await axios(`https://imdb-api.com/en/API/MostPopularMovies/k_ww4cypd0`);
+            // const { data: response } = await axios('https://imdb-api.com/en/API/MostPopularMovies/');
+            const { data: response } = await axios(`https://imdb-api.com/en/API/MostPopularMovies/${process.env.REACT_APP_API_KEY}`);
 
             dispatch(gotMovies(response.items))
         } catch (err) {

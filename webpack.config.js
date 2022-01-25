@@ -1,4 +1,20 @@
+var webpack = require('webpack');
+var dotenv = require("dotenv").config({ path: __dirname + "/.env" });
+
 module.exports = {
+  // plugins: [
+  //   new webpack.DefinePlugin({
+  //     'process.env.REACT_APP_API_KEY': JSON.stringify(process.env.REACT_APP_API_KEY)
+  //   })
+  // ],
+  // plugins: [
+  //   new Dotenv()
+  // ],
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env.DOTENV": JSON.stringify(dotenv.parsed),
+    }),
+  ],
   entry: [
     './client/index.js'
   ],
@@ -24,5 +40,5 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       }
     ]
-  }
+  },
 }

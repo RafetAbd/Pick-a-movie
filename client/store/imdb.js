@@ -25,7 +25,7 @@ export const fetchAllMoviesFromIMDb = () => {
     return async (dispatch) => {
         try {
             // const { data: response } = await axios('https://imdb-api.com/en/API/MostPopularMovies/k_ww4cypd0');
-            const { data: response } = await axios(`https://imdb-api.com/en/API/MostPopularMovies/${process.env.DOTENV.REACT_APP_API_KEY}`);
+            const { data: response } = await axios(`https://imdb-api.com/en/API/MostPopularMovies/k_ww4cypd0`);
 
             dispatch(gotMovies(response.items))
         } catch (err) {

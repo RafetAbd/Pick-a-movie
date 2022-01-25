@@ -12,7 +12,7 @@ export const gotSingleMovie = (singleMovie) => {
 export const fetchSingleMovieFromIMDb = (movieId) => {
     return async (dispatch) => {
         try {
-            const { data: response } = await axios(`https://imdb-api.com/en/API/YouTubeTrailer/${process.env.REACT_APP_API_KEY}/${movieId}`);
+            const { data: response } = await axios(`https://imdb-api.com/en/API/YouTubeTrailer/${process.env.DOTENV.REACT_APP_API_KEY}/${movieId}`);
             dispatch(gotSingleMovie(response))
         } catch (err) {
             console.log(err)

@@ -22,7 +22,6 @@ export const removeMovie = (movie) => {
 }
 
 export const fetchAllMoviesFromIMDb = () => {
-    console.log(process.env.DOTENV)
     return async (dispatch) => {
         try {
             // const { data: response } = await axios('https://imdb-api.com/en/API/MostPopularMovies/k_ww4cypd0');

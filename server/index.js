@@ -7,7 +7,7 @@ const seed = require('../script/seed');
 const socketio = require('socket.io')
 
 
-console.log(process.env.PORT);
+// console.log(process.env.PORT);
 const init = async () => {
   try {
     if (process.env.SEED === 'true') {

@@ -35,7 +35,7 @@ const Room = () => {
             await dispatch(removeMovie(movie))
         } else if (xPosition > 900) {
             console.log('add to the backend')
-            await dispatch(updateRoom(recentRoom.id, movie));
+            dispatch(updateRoom(recentRoom.id, movie));
             dispatch(removeMovie(movie))
         } else {
             return

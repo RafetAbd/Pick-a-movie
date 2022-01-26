@@ -4,7 +4,7 @@
 
 * Clone this repo
 * `npm install`
-* Create two postgres databases (`pick-a-movie`):
+* Create postgres databases (`pick-a-movie`):
 
 ## Start
 
@@ -23,4 +23,4 @@ Running `npm run start:dev` will make great things happen!
 7. Framer Motion
 
 ## Credits
-Background image curtisy of [Alex Litvin](https://unsplash.com/@alexlitvin).
+home page image curtisy of [Lee Steffen](https://twitter.com/leesteffen).

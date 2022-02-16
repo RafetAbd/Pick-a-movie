@@ -2,7 +2,7 @@
 .landing-page-before-login {
     margin-top: 3%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .next-movie {
@@ -114,3 +114,13 @@
     margin-top: 2%;
 }
 
+.l-p-b-l-f {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-div {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

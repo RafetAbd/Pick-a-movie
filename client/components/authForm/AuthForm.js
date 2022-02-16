@@ -8,7 +8,10 @@ import './authForm.css'
  * COMPONENT
  */
 const AuthForm = props => {
+
   const { name, displayName, handleSubmit, error } = props
+
+
 
   return (
     <motion.div
@@ -17,24 +20,35 @@ const AuthForm = props => {
       transition={{ delay: 0.1, duration: 0.8 }}
     >
       <form onSubmit={handleSubmit} name={name} className='auth-form'>
-        <div>
-          <label htmlFor="username" className='username-password-label'>
-            <p>USERNAME</p>
-          </label>
-          <input name="username" type="text" className='username-password-input' />
+        {error && error.response && <div className='error-div'> {error.response.data} </div>}
+        <div className='auth-form-input' >
+          <div className='username-password-divs'>
+            <label htmlFor="username" className='username-password-label'>
+              <p>EMAIL</p>
+            </label>
+            <input name="username" type="text" id='username-input' />
+          </div>
+          <div className='username-password-divs'>
+            <label htmlFor="password" className='username-password-label'>
+              <p>PASSWORD</p>
+            </label>
+            <input name="password" type="password" id='password-input' />
+          </div>
+          <div className='username-password-divs'>
+            <motion.button
+              whileHover={{ scale: 1.2 }}
+              type="submit" className='submit-button'>{displayName}</motion.button>
+          </div>
         </div>
-        <div>
-          <label htmlFor="password" className='username-password-label'>
-            <p>PASSWORD</p>
-          </label>
-          <input name="password" type="password" className='username-password-input' />
+        <div className='testing-div'>
+          <p >
+            For Testing use email <br />
+            cody@mail.com or lisa@mail.com <br />
+            the password is 123.<br />
+            Also, feel free to create your own account.
+          </p>
         </div>
-        <div>
-          <motion.button
-            whileHover={{ scale: 1.2 }}
-            type="submit" className='submit-button'>{displayName}</motion.button>
-        </div>
-        {error && error.response && <div> {error.response.data} </div>}
+
       </form>
     </motion.div>
   )

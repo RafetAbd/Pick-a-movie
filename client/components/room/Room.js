@@ -69,29 +69,33 @@ const Room = () => {
                     )
                 })}
             </div>
-            <div className='all-movies'>
-                {allMovies.map((movie) => {
-                    return (
-                        <motion.div key={movie.id} className='movie-list'
-                            whileHover={{ scale: 1.2 }}
-                            drag="x"
-                            dragConstraints={{ left: 0, right: 0 }}
-                            dragElastic={1}
-                            onDragEnd={
-                                (event, info) => checkPosition(info.point.x, movie)
-                            }
-                            style={{ position: 'absolute', zIndex: 200 - movie.id || 1 }}
-                        >
-                            <img src={movie.image} className='movie-pic' />
-                            <div className='movie-list-p'>
-                                <p className='movie-list-p-title'> {movie.fullTitle}</p>
-                                <p>rating: {movie.imDbRating}</p>
-                                <p>crew: {movie.crew}</p>
-                            </div>
-                        </motion.div>
-                    )
-                })
-                }
+            <div className='room-bottom'>
+                <div className='drag-left-right'><img src='/clipart528338 (1).png' /></div>
+                <div className='all-movies'>
+                    {allMovies.map((movie) => {
+                        return (
+                            <motion.div key={movie.id} className='movie-list'
+                                whileHover={{ scale: 1.2 }}
+                                drag="x"
+                                dragConstraints={{ left: 0, right: 0 }}
+                                dragElastic={1}
+                                onDragEnd={
+                                    (event, info) => checkPosition(info.point.x, movie)
+                                }
+                                style={{ position: 'absolute', zIndex: 200 - movie.id || 1 }}
+                            >
+                                <img src={movie.image} className='movie-pic' />
+                                <div className='movie-list-p'>
+                                    <p className='movie-list-p-title'> {movie.fullTitle}</p>
+                                    <p>rating: {movie.imDbRating}</p>
+                                    <p>crew: {movie.crew}</p>
+                                </div>
+                            </motion.div>
+                        )
+                    })
+                    }
+                </div>
+                <div className='drag-left-right'><img src='/clipart528848.png' /></div>
             </div>
         </motion.div>
     )

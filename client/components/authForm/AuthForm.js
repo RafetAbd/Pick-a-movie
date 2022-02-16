@@ -20,8 +20,9 @@ const AuthForm = props => {
       transition={{ delay: 0.1, duration: 0.8 }}
     >
       <form onSubmit={handleSubmit} name={name} className='auth-form'>
-        {error && error.response && <div className='error-div'> {error.response.data} </div>}
         <div className='auth-form-input' >
+        {error && error.response && <div className='error-div'> {error.response.data} </div>}
+
           <div className='username-password-divs'>
             <label htmlFor="username" className='username-password-label'>
               <p>EMAIL</p>

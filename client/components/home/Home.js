@@ -43,10 +43,6 @@ const Home = () => {
               <Link to="/newroom" onClick={() => createRoom()} className='create-room-link'>Create a new room</Link>
               <button onClick={() => open()} className='join-room-btn'>Join Room</button>
             </motion.div>
-            {/* <p className='fotter-line'>2022 &copy; Rafet Abdalgalil. All rights reserved. <a href='https://github.com/RafetAbd/Pick-a-movie' className='github-link' target="_blank">
-              github
-            </a>
-            </p> */}
           </div>
           <div className='landing-page-pic-div-after-login'>
             <img src='/home-page-poster.jpeg' className='landing-page-pic' />
@@ -67,8 +63,6 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 1 }}
           className='landing-page-before-login'>
-          {/* The navbar will show this message before you log in */}
-          {/* <h3>this is the landing page before login</h3> */}
           <div className='l-p-b-l-f'>
             <div className='main-page-phrases'>
               <p className='next-movie'>NEXT MOVIE TO WATCH </p>
@@ -82,12 +76,7 @@ const Home = () => {
                 TO DECIDE TOGETHER WHICH MOVIE TO SEE
                 NEXT.
               </p>
-              {/* <div > */}
-
-              {/* </div> */}
             </div>
-            {/* <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link> */}
             <div className='landing-page-pic-div'>
               <img src='/home-page-poster.jpeg' className='landing-page-pic' />
             </div>
@@ -102,9 +91,7 @@ const Home = () => {
             </p>
           </div>
         </motion.div>
-
       )}
-
     </div>
   )
 }

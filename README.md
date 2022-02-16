@@ -24,7 +24,7 @@ Running `npm run start:dev` will make great things happen!
 6. IMDb-API
 7. Framer Motion
 
-## [PICK A MOVIE SITE](https://pick-amovie.herokuapp.com/)
+## [PICK A MOVIE WEBSITE](https://pick-amovie.herokuapp.com/)
 
 ## Credits
 home page image curtisy of [Lee Steffen](https://twitter.com/leesteffen).

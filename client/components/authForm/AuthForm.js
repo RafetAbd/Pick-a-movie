@@ -43,9 +43,9 @@ const AuthForm = props => {
         </div>
         <div className='testing-div'>
           <p >
-            For Testing use email <br />
+            For testing, please use email <br />
             cody@mail.com or lisa@mail.com <br />
-            the password is 123.<br />
+            the password is 123<br />
             Also, feel free to create your own account.
           </p>
         </div>

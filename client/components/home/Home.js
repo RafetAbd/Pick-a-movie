@@ -32,20 +32,22 @@ const Home = () => {
       <Modal />
       {isLoggedIn ? (
         <div className='landing-page-afterlogin-whole'>
-          <div className='landing-page-after-login-left-part'>
-            {/* The home page will show these links after you log in */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1, duration: 0.8 }}
-              className='landing-page-after-login'
-            >
-              <Link to="/newroom" onClick={() => createRoom()} className='create-room-link'>Create a new room</Link>
-              <button onClick={() => open()} className='join-room-btn'>Join Room</button>
-            </motion.div>
-          </div>
-          <div className='landing-page-pic-div-after-login'>
-            <img src='/home-page-poster.jpeg' className='landing-page-pic' />
+          <div className='landing-page-afterlogin-without-footer'>
+            <div className='landing-page-after-login-left-part'>
+              {/* The home page will show these links after you log in */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1, duration: 0.8 }}
+                className='landing-page-after-login'
+              >
+                <Link to="/newroom" onClick={() => createRoom()} className='create-room-link'>Create a new room</Link>
+                <button onClick={() => open()} className='join-room-btn'>Join Room</button>
+              </motion.div>
+            </div>
+            <div className='landing-page-pic-div-after-login'>
+              <img src='/home-page-poster.jpeg' className='landing-page-pic' />
+            </div>
           </div>
           <div className='footer-div'>
             <p className='fotter-line'>2022 &copy; Rafet Abdalgalil. All rights reserved. <a href='https://github.com/RafetAbd/Pick-a-movie' className='github-link' target="_blank">

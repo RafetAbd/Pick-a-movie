@@ -41,13 +41,15 @@ const MatchedMovie = (props) => {
                     </Link>
                 </motion.div>
                 <ReactPlayer
+                width="100%"
+                height="100%"
                     className='react-player'
                     url={movie.videoUrl}
                 />
             </div>
             <div className="title-year">
-                <p className="single-movie-page-title-year">{movie.title}</p>
-                <p className="single-movie-page-title-year">{movie.year}</p>
+                <p className="single-movie-page-title-year">{movie.title}<br/>{movie.year}</p>
+                {/* <p className="single-movie-page-title-year">{movie.year}</p> */}
             </div>
         </div>
     )

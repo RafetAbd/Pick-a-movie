@@ -1,4 +1,4 @@
-# PICK A MOVIE : a tender like application where users can swipe movies to the left or the right to find a match.
+# PICK A MOVIE : a tinder like application where users can swipe movies to the left or the right to find a match.
 
 ## Installation instructions
 

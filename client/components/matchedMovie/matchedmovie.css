@@ -4,6 +4,7 @@
     flex-direction: row;
     margin-top: 5%;
     margin-left: 5%;
+    height: 60vh;
 }
 
 .title-year {
@@ -27,6 +28,10 @@
 .gobackbtn-trailor-div {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    height: 100%;
 }
 
 .goback-link-div {
@@ -45,5 +50,42 @@
 .goback-link {
     color: white;
     text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    .single-movie-page {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 5%;
+        margin-left: 5%;
+        flex-wrap: wrap;
+    }
+    .single-movie-page-title-year {
+        font-size: 200%;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        box-shadow: rgb(1, 0, 0)
+       }
+       .gobackbtn-trailor-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:80%;
+        height: 100%;
+        margin: 0% 5%;
+    }
+       .goback-link-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 25px;    
+        height: 40%;
+        width: 50%;
+        margin-bottom:5%;
+        border-radius: 10px;
+        border: solid white 1px;
+        box-shadow: 0px 0px 8px rgb(255,255,255);
+    }
 }
 

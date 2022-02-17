@@ -31,7 +31,8 @@
     justify-content: center;
     margin-top: 3%;
     padding: 2%;
-    box-shadow: 0px 0px 8px rgb(255,255,255);}
+    box-shadow: 0px 0px 8px rgb(255,255,255);
+}
 
 .newroom-link {
     font-size: 20px;
@@ -40,4 +41,29 @@
     text-align: center;
     font-size: 30px;
     
+}
+
+@media only screen and (max-width: 800px) {
+    .newroom-label-key-div {
+        display: flex;
+        flex-direction: row;
+        font-size: 20px;
+        border-radius: 10px;
+        border: 1px solid #01FF70;
+        width: 100%;
+        justify-content: space-around;
+        box-shadow: 0px 0px 8px rgb(255,255,255);
+        margin:20% 0%;
+    }
+    .newroom-link-div {
+        display: flex;
+        flex-direction: row;
+        font-size: 30px;
+        border-radius: 10px;
+        border: 1px solid #ababab;
+        width: 100%;
+        justify-content: center;
+        margin-top: 3%;
+        padding: 2%;
+        box-shadow: 0px 0px 8px rgb(255,255,255);}
 }

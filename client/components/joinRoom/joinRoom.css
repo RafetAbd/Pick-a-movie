@@ -37,5 +37,29 @@
     box-shadow: 0 0 15px 10px rgba(0,0,0,0.06);
 }
 
+@media only screen and (max-width: 800px) {
+    #roomkey-input {
+        font-size: 20px;
+        color: #333;
+        width: 40%;
+        border: solid #cdc6c6 2px;
+        box-shadow: 0 0 15px 10px rgba(0,0,0,0.06);
+    }
+    .submit-cancel-joinroom-button {
+        background: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        padding: 15px 0;
+        border: none;
+        cursor: pointer;
+        margin-top:3%;
+        width: 40%;
+        border-radius: 10px;
+        border: 1px solid #ababab;
+        box-shadow: 0 0 15px 10px rgba(0,0,0,0.06);
+    }
+}
+
 
 

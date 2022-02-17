@@ -13,7 +13,7 @@ nav {
   }
 
   .logo-link {
-    font-size: 40px;
+    font-size: 250%;
     margin-right: auto;
     color: #01FF70;
     font-weight: bold;
@@ -42,6 +42,21 @@ nav {
     margin-right: 2%;
     font-size: 20px;
     box-shadow: 0px 0px 8px rgb(255,255,255);
+  }
+
+  @media only screen and (max-width: 800px) {
+    .logo-link {
+      font-size: 150%;
+      margin-right: auto;
+      color: #01FF70;
+      font-weight: bold;
+    }
+    .welcome-user {
+      margin-right: 5%;
+      font-size: 70%;
+      box-shadow: rgb(1, 0, 0)
+  }
+  
   }
 
 

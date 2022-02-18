@@ -33,7 +33,7 @@ const Room = () => {
         if (xPosition < 100) {
             console.log('remove from the list')
             await dispatch(removeMovie(movie))
-        } else if (xPosition > 900) {
+        } else if (xPosition > window.innerWidth-100) {
             console.log('add to the backend')
             dispatch(updateRoom(recentRoom.id, movie));
             dispatch(removeMovie(movie))

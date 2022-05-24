@@ -28,3 +28,5 @@ Running `npm run start:dev` will make great things happen!
 
 ## Credits
 home page image curtisy of [Lee Steffen](https://twitter.com/leesteffen).
+
+Video by cottonbro from Pexels

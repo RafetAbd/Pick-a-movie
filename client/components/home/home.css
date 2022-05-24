@@ -1,70 +1,62 @@
 
 .landing-page-before-login {
-    margin-top: 3%;
-    display: flex;
-    flex-direction: column;
+    color : #FFFFFF;
+    width: 100%;
+    height: 100%;
+    
+}
+
+video {
+    position:fixed;
+    object-fit:fill;
+    z-index: -100;
+    background: #0000003a;
 }
 
 .next-movie {
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 90px;
-    margin-bottom: 0;
+    font-size: 4em;
+    font-weight: bold;
+    padding-bottom: 2%;
+    text-shadow: #121212 0px 0px 10px;
 }
 
 .landing-page-text {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 20px;
-    width: 80%; 
-}
-
-.landing-page-after-login {
-    display: flex;
-    /* margin: 15%; */
-    width: 100%;
+    font-size: 1em;
+    width: 50%;
+    text-shadow: #121212 0px 0px 10px;
 }
 
 .create-room-link  {
-    background: none;
-    font-size: 18px;
+    font-size: 2em;
     color: white;
-    padding: 35px 20px;
-    border: none;
-    cursor: pointer;
-    margin-top:3%;
-    width: 40%;
-    border-radius: 10px;
-    border: 1px solid #ababab;
     font-weight: bold;
-    text-align: center;
-    box-shadow: 0px 0px 8px rgb(255,255,255);
+    text-shadow: #121212 0px 0px 10px;
+    
 }
 
 .create-room-link:hover {
-    transform: scale(1.2)
+    text-shadow: #FFFFFF 0px 0px 20px;
+    
 }
 
 .join-room-btn {
-    background: none;
-    font-size: 18px;
+    font-size: 2em;
     color: white;
-    padding: 35px 20px;
-    border: none;
-    cursor: pointer;
-    margin-top:3%;
-    width: 40%;
-    border-radius: 10px;
-    border: 1px solid #ababab;
-    margin-left: 8%;
     font-weight: bold;
-    box-shadow: 0px 0px 8px rgb(255,255,255);
+    background: #121212;
+    border: none;
 }
 .join-room-btn:hover {
-    transform: scale(1.2);
+    text-shadow: #FFFFFF 0px 0px 20px;
+    cursor: pointer;
 }
 
 .main-page-phrases {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    padding-top: 10%;
+    padding-left: 5%;
 }
 
 
@@ -82,14 +74,14 @@
 }
 
 .github-link {
-    margin-left: 2%;
+    margin-left: 1%;
     color: #01FF70;
-    font-size: 14px;
+    font-size: 1em;
 }
 
 .fotter-line {
     margin-top:auto;
-    font-size: 12px;
+    font-size: 1em;
     width: 100%;
     padding-top: 2%;
 }
@@ -127,8 +119,27 @@
 
 .footer-div {
     position: fixed;
+    display: flex;
     bottom: 0;
     width: 100%;
+    text-align: center;
+}
+
+.video-by {
+    padding-left: 2%;
+    text-decoration: none;
+}
+
+.video-by > a {
+    color: #01FF70;
+    text-decoration: none;
+}
+
+.landing-page-after-login {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 1200px) {

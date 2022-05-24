@@ -5,15 +5,17 @@ nav {
     flex-direction: row;
     justify-content: flex-end;
     color: white;
+    padding: 2%;
   }
 
   .logo {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    box-shadow: rgb(1, 0, 0)
+    box-shadow: #01000042;
+    letter-spacing: 0.3em;
   }
 
   .logo-link {
-    font-size: 250%;
+    font-size: 2em;
     margin-right: auto;
     color: #01FF70;
     font-weight: bold;
@@ -21,12 +23,12 @@ nav {
 
   .welcome-user {
       margin-right: 5%;
-      font-size: 20px;
+      font-size: 2em;
       box-shadow: rgb(1, 0, 0)
   }
 
   .logout {
-    font-size: 20px;
+    font-size: 1.5em;
     color: white;
     border: solid white 1px;
     border-radius: 10px;

@@ -5,7 +5,7 @@ nav {
     flex-direction: row;
     justify-content: flex-end;
     color: white;
-    padding: 2%;
+    padding: 1%;
   }
 
   .logo {
@@ -23,12 +23,12 @@ nav {
 
   .welcome-user {
       margin-right: 5%;
-      font-size: 2em;
-      box-shadow: rgb(1, 0, 0)
+      font-size: 1.5em;
+      text-shadow: #FFFFFF 0px 0px 10px;
   }
 
   .logout {
-    font-size: 1.5em;
+    font-size: 1em;
     color: white;
     border: solid white 1px;
     border-radius: 10px;
@@ -42,8 +42,13 @@ nav {
     border-radius: 10px;
     padding: 1%;
     margin-right: 2%;
-    font-size: 20px;
-    box-shadow: 0px 0px 8px rgb(255,255,255);
+    font-size: 1em;
+    /* box-shadow: 0px 0px 8px rgb(255,255,255); */
+  }
+
+  .login-signup-btn:hover {
+    box-shadow: #FFFFFF 0px 0px 20px;
+    cursor: pointer;
   }
 
   @media only screen and (max-width: 800px) {
